@@ -1,0 +1,163 @@
+@font-face {
+	font-family: "clacon2";
+	src: url("../fonts/clacon2.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "dot";
+	src: url("../fonts/dot.woff2") format("woff2");
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif, "clacon2";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	overflow: hidden;
+	background-color: #181223;
+	width: 100vw;
+	height: 100vh;
+	user-select: none;
+}
+/* body {
+	will-change: transform;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+} */
+*::before {
+	will-change: transform !important;
+}
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	background-image: url("../images/scanlines.png");
+	background-size: auto 1000px;
+	background-repeat: repeat;
+	z-index: 1001;
+	pointer-events: none;
+	animation: scanlines 20s linear infinite;
+}
+
+.terminalFont {
+	color: #00ffe1;
+	font-size: 2.5rem;
+	margin-bottom: 0.2rem;
+	font-family: "clacon2", sans-serif;
+	text-shadow: 0 0 5px #00ffe1a0;
+	left: 1vh;
+	position: relative;
+}
+
+@keyframes scanlines {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 100%;
+	}
+}
+
+.react-resizable-handle {
+	/* background-color: #ff0000;  */
+	content: "";
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	width: 5px;
+	height: 5px;
+	z-index: 999;
+	border-right: 5px solid rgb(10, 109, 222);
+	border-bottom: 5px solid rgb(10, 109, 222);
+	/* opacity: 0; */
+}
+
+.react-resizable-handle:hover {
+	border-right: 5px solid rgba(76, 184, 230, 1);
+	border-bottom: 5px solid rgba(76, 184, 230, 1);
+}
+
+/* bigger handle on mobile */
+@media (max-width: 768px) {
+	.react-resizable-handle {
+		width: 40px;
+		height: 40px;
+		border-right: 10px solid rgb(10, 109, 222);
+		border-bottom: 10px solid rgb(10, 109, 222);
+	}
+	.react-resizable-handle:hover {
+		border-right: 10px solid rgba(76, 184, 230, 1);
+		border-bottom: 10px solid rgba(76, 184, 230, 1);
+	}
+}
+
+.noAnimation {
+	animation: none !important;
+}
+.crtMaskUp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+	background-color: #181223;
+	z-index: 2000;
+	animation: crtUp 4s forwards;
+	visibility: hidden;
+}
+
+.crtMaskDown {
+	position: absolute;
+	top: 50vh;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+	background-color: #181223;
+	z-index: 2000;
+	animation: crtDown 4s forwards;
+	visibility: hidden;
+}
+
+@keyframes crtUp {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+		visibility: visible;
+	}
+	to {
+		transform: translateY(-50vh);
+		opacity: 1;
+		visibility: hidden;
+	}
+}
+@keyframes crtDown {
+	from {
+		opacity: 1;
+		transform: translateY(0vh);
+		visibility: visible;
+	}
+	to {
+		transform: translateY(50vh);
+		opacity: 1;
+		visibility: hidden;
+	}
+}

@@ -1,0 +1,527 @@
+.body {
+	background-color: aliceblue;
+	overflow-x: hidden !important;
+}
+
+.imgChooserContainer {
+	/* width: 100vw; */
+	/* border: 1px solid gray; */
+	height: calc(10vw + 50px);
+	max-height: calc(200px + 50px);
+	min-height: calc(100px + 50px);
+	transition: all 0.5s ease;
+}
+
+.imgChooser {
+	display: flex;
+	/* overflow-x: scroll; */
+	/* scroll-snap-type: x mandatory; */
+	position: relative;
+	align-items: center;
+	white-space: nowrap;
+	text-align: center;
+	/* width: 100vw; */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	justify-content: center;
+	transition: left 0.5s ease-in-out;
+}
+
+.avatarOption {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.imgChooser img {
+	width: 10vw;
+	height: 10vw;
+	object-fit: cover;
+	border-radius: 12px;
+	max-width: 200px;
+	max-height: 200px;
+	min-width: 100px;
+	min-height: 100px;
+	padding: 0;
+	background-color: #003f3762;
+	transition: all 0.5s ease;
+}
+
+.selected img {
+	border: 0.2rem solid #00ffe1;
+	box-shadow: 0 0px 10px 3px #00ffe19b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	transform: scale(1);
+}
+
+.notSelected img {
+	transform: scale(0.7);
+}
+
+.fileInputContainer {
+	position: relative;
+	width: 10vw;
+	height: 10vw;
+	border: 0.2rem solid #00ffe1;
+	box-shadow: 0 0px 10px 1px #00ffe19b;
+	border-radius: 12px;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	max-width: 200px;
+	max-height: 200px;
+	min-width: 100px;
+	min-height: 100px;
+	box-sizing: border-box;
+	/* zoom: 0.7; */
+	transform: all 0.5s ease;
+	transform: scale(0.7);
+}
+
+.fileInputLabel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: relative;
+}
+
+.fileInputIcon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 5vw;
+	/* Ajustez cette valeur si nécessaire */
+	color: #00ffe1;
+	filter: drop-shadow(0 0 0.75rem #00ffe1);
+}
+
+.fileInput {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.formRegister {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+
+.formRegister * {
+	font-family: "clacon2";
+}
+
+.inputContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row;
+	width: 100vw;
+	height: 2rem;
+	padding: 0;
+}
+
+.inputLabel {
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.inputLabel,
+.input {
+	box-sizing: border-box;
+}
+
+.input {
+	height: 100%;
+	padding-left: 10px;
+	position: relative;
+}
+.input:disabled {
+	background-color: #5d5d5da0;
+	border: 1px solid #a9a9a9d0;
+	color: #c5c5c5d0;
+}
+.usernameTaken {
+	color: #ff36ed;
+	font-size: 20px;
+	text-shadow: 0 0 5px #ff36eed5;
+	position: relative;
+	top: 0;
+	min-height: 20px;
+}
+.submit {
+	border-radius: 2px;
+	height: 100%;
+	width: auto;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	font-size: 30px;
+	background-color: transparent;
+	color: #00ffe1;
+	border: 0.2rem solid #00ffe1;
+	padding: 0;
+	text-align: center;
+	align-items: center; /* Centrage vertical en flexbox */
+	display: flex;
+	justify-content: center;
+}
+.submit:hover {
+	background-color: #00ffe1;
+	color: white;
+	box-shadow: 0px 0px 0.5rem #00ffe1;
+}
+
+.formRegister {
+	backdrop-filter: blur(4px);
+}
+
+.applyAnimation {
+	animation: fadeOut 1.5s ease-in-out forwards;
+}
+.applyAnimationAvatar {
+	animation: fadeOutAvatar 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOutAvatar {
+	0% {
+		opacity: 1;
+		scale: 1;
+	}
+	100% {
+		opacity: 0;
+		scale: 1.5;
+	}
+}
+
+/* FULL CSS SYNTHWAVE BACKGROUND	 */
+/* .background{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+} */
+/*
+.background {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: rgb(19, 7, 61);
+	background-image: url("../images/wallpaperGrid.svg"),
+		linear-gradient(
+			to bottom,
+			rgba(19, 7, 61, 1) 0%,
+			rgba(226, 67, 131, 1) 50%
+		);
+	background-repeat: repeat, no-repeat;
+	background-size: auto 80%, 100% 100%;
+	background-position: center top, center center;
+	z-index: -2;
+}
+
+.backgroundTop {
+	width: 100%;
+	height: 50vh;
+	display: flex;
+}
+
+.backgroundLeft,
+.backgroundRight {
+	flex: 1;
+	background: url("../images/wallpaperRepeat.svg");
+	background-repeat: repeat-x;
+	background-size: auto 50vh;
+}
+
+.backgroundCenter {
+	background: url("../images/wallpaperTop.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 50vh;
+	height: 50vh;
+	width: calc(49.9vh * 3 / 1);
+}
+.backgroundLeft {
+	background-position: right;
+}
+.backgroundBottom {
+	width: 100vw;
+	height: 50vh;
+	background: url("../images/wallpaperBottom.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+} */
+
+.background::before {
+	--mtn: url(../images/bgRock1.png);
+	--mtn2: url(../images/bgRock2.png);
+}
+
+:root {
+	--c1: hsl(219, 79%, 66%);
+	--c2: hsl(319, 100%, 60%);
+	--c3: hsl(266, 49%, 25%);
+	--c4: hsl(60, 82%, 58%);
+	--c5: hsl(0, 67%, 55%);
+	--c6: hsl(213, 96%, 11%);
+	--c2hsl: 319, 100%, 60%;
+}
+
+@property --outrun {
+	syntax: "<number>";
+	initial-value: 0;
+	inherits: false;
+}
+
+@keyframes outrun {
+	to {
+		--outrun: 1;
+	}
+}
+
+.background {
+	overflow: hidden !important;
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 100) !important;
+	/* SI UN JOUR IL Y A UN SOUCIS, SUREMENT A CAUSE DE CE QUI SUIT: */
+	z-index: -2;
+	position: relative;
+	top: -100vh;
+}
+
+.background::before {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: calc(var(--vh, 1vh) * 100);
+	z-index: -1;
+	pointer-events: none;
+	filter: brightness(1.125);
+	animation: outrun 0.6s linear infinite;
+
+	/* --lgDepth: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 1808 530\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230\" stroke=\"cornflowerblue\" stroke-width=\"2\" vector-effect=\"non-scaling-stroke\" /></svg>") left 60vh / cover no-repeat; */
+	--lgDepth: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1808 530' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230' stroke='cornflowerblue' stroke-width='2' vector-effect='non-scaling-stroke' /></svg>")
+		left 60vh / cover no-repeat;
+	--outrun: 0;
+	--pos: var(--outrun, 0);
+	--distance: 0.5%;
+	--hor: 60%;
+	--bot: 25vh;
+	--horizontal-offset: 0px; /* Définissez ici le décalage vertical souhaité */
+
+	--l0: calc(
+			var(--hor) + 0 * 0 * var(--distance) +
+				(
+					(
+							(0 + 1) * (0 + 1) * var(--distance) - 0 * 0 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l1: calc(
+			var(--hor) + 1 * 1 * var(--distance) +
+				(
+					(
+							(1 + 1) * (1 + 1) * var(--distance) - 1 * 1 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l2: calc(
+			var(--hor) + 2 * 2 * var(--distance) +
+				(
+					(
+							(2 + 1) * (2 + 1) * var(--distance) - 2 * 2 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l3: calc(
+			var(--hor) + 3 * 3 * var(--distance) +
+				(
+					(
+							(3 + 1) * (3 + 1) * var(--distance) - 3 * 3 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l4: calc(
+			var(--hor) + 4 * 4 * var(--distance) +
+				(
+					(
+							(4 + 1) * (4 + 1) * var(--distance) - 4 * 4 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l5: calc(
+			var(--hor) + 5 * 5 * var(--distance) +
+				(
+					(
+							(5 + 1) * (5 + 1) * var(--distance) - 5 * 5 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l6: calc(
+			var(--hor) + 6 * 6 * var(--distance) +
+				(
+					(
+							(6 + 1) * (6 + 1) * var(--distance) - 6 * 6 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l7: calc(
+			var(--hor) + 7 * 7 * var(--distance) +
+				(
+					(
+							(7 + 1) * (7 + 1) * var(--distance) - 7 * 7 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l8: calc(
+			var(--hor) + 8 * 8 * var(--distance) +
+				(
+					(
+							(8 + 1) * (8 + 1) * var(--distance) - 8 * 8 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+	--l9: calc(
+			var(--hor) + 9 * 9 * var(--distance) +
+				(
+					(
+							(9 + 1) * (9 + 1) * var(--distance) - 9 * 9 *
+								var(--distance)
+						) * var(--pos)
+				)
+		) + var(--horizontal-offset);
+
+	--lgh: linear-gradient(
+		transparent 0px var(--hor),
+		var(--c1) var(--hor) calc(var(--hor) + 2px),
+		transparent calc(var(--hor) + 2px)
+	);
+	--lg0: linear-gradient(
+		transparent 0px calc(var(--l0)),
+		var(--c1) calc(var(--l0)) calc(var(--l0) + 2px),
+		transparent calc(var(--l0) + 2px)
+	);
+	--lg1: linear-gradient(
+		transparent 0px calc(var(--l1)),
+		var(--c1) calc(var(--l1)) calc(var(--l1) + 2px),
+		transparent calc(var(--l1) + 2px)
+	);
+	--lg2: linear-gradient(
+		transparent 0px calc(var(--l2)),
+		var(--c1) calc(var(--l2)) calc(var(--l2) + 2px),
+		transparent calc(var(--l2) + 2px)
+	);
+	--lg3: linear-gradient(
+		transparent 0px calc(var(--l3)),
+		var(--c1) calc(var(--l3)) calc(var(--l3) + 2px),
+		transparent calc(var(--l3) + 2px)
+	);
+	--lg4: linear-gradient(
+		transparent 0px calc(var(--l4)),
+		var(--c1) calc(var(--l4)) calc(var(--l4) + 2px),
+		transparent calc(var(--l4) + 2px)
+	);
+	--lg5: linear-gradient(
+		transparent 0px calc(var(--l5)),
+		var(--c1) calc(var(--l5)) calc(var(--l5) + 2px),
+		transparent calc(var(--l5) + 2px)
+	);
+	--lg6: linear-gradient(
+		transparent 0px calc(var(--l6)),
+		var(--c1) calc(var(--l6)) calc(var(--l6) + 2px),
+		transparent calc(var(--l6) + 2px)
+	);
+	--lg7: linear-gradient(
+		transparent 0px calc(var(--l7)),
+		var(--c1) calc(var(--l7)) calc(var(--l7) + 2px),
+		transparent calc(var(--l7) + 2px)
+	);
+	--lg8: linear-gradient(
+		transparent 0px calc(var(--l8)),
+		var(--c1) calc(var(--l8)) calc(var(--l8) + 2px),
+		transparent calc(var(--l8) + 2px)
+	);
+	--lg9: linear-gradient(
+		transparent 0px calc(var(--l9)),
+		var(--c1) calc(var(--l9)) calc(var(--l9) + 2px),
+		transparent calc(var(--l9) + 2px)
+	);
+	background: var(--lgDepth), var(--lgh), var(--lg0), var(--lg1), var(--lg2),
+		var(--lg3), var(--lg4), var(--lg5), var(--lg6), var(--lg7), var(--lg8),
+		var(--lg9), var(--mtn) center 60% / min(75vh, 75vw) no-repeat,
+		var(--mtn2) center 60% / min(75vh, 75vw) repeat-x,
+		linear-gradient(
+			transparent 20%,
+			var(--c5) 60%,
+			var(--c3) 60% 70%,
+			hsla(var(--c2hsl), 0.75),
+			transparent 150%
+		),
+		repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
+		radial-gradient(
+			circle at center,
+			transparent min(45vh, 45vw),
+			hsla(var(--c2hsl), 0.75) min(65vh, 65vw),
+			var(--c3) 120%
+		),
+		linear-gradient(
+			transparent 30vh,
+			var(--c5) 30vh 30.2vh,
+			transparent 30.2vh 35.2vh,
+			var(--c5) 35.2vh 36vh,
+			transparent 36vh 40vh,
+			var(--c5) 40vh 41.6vh,
+			transparent 41.6vh 45.1vh,
+			var(--c5) 45.1vh 48.6vh,
+			transparent 48.6vh 52.5vh,
+			var(--c5) 52.5vh 57.5vh,
+			transparent 57.5vh
+		),
+		radial-gradient(
+			circle at center,
+			var(--c4) min(45vh, 45vw),
+			transparent min(45vh, 45vw)
+		),
+		linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
+}

@@ -1,0 +1,161 @@
+.notifContainer {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 20vw;
+	height: 10vh;
+	min-width: 255px;
+	min-height: 55px;
+	max-width: 370px;
+	max-height: 90px;
+	right: 0;
+	margin: 1rem;
+	padding: 5px;
+	z-index: 100;
+	overflow: hidden;
+	border-radius: 3px;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.648);
+	/* background-color: #0c005b97; */
+	background: linear-gradient(180deg, #090233b7 0%, #0c005b97 10%);
+	border: 1px solid #2107c697;
+	transition: all 0.5s ease-in-out;
+	animation: fadeIn 0.2s ease-in-out, slideIn 0.4s ease-in-out;
+}
+.notifContainer.fadeOut {
+	animation: fadeOut 0.2s ease-in-out, slideOut 0.4s ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+.notifContainer:hover {
+	box-shadow: 0 0 5px #0011ffab;
+	background: linear-gradient(180deg, #0c005bb2 0%, #0c005b97 10%);
+	cursor: pointer;
+}
+
+.notifIcon {
+	flex: 1;
+	height: 100%;
+	width: 30%;
+	object-fit: contain;
+}
+.notifTextContainer {
+	display: flex;
+	flex: 5;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	margin-left: 10px;
+}
+.titleAndChannelContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 5px;
+	/* width: 100%;
+	height: 50%; */
+}
+.notifTitle {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-top: 5px;
+	margin-bottom: 1px;
+	font-family: "clacon2";
+}
+.notifChannel {
+	color: #cbcbcb;
+	font-size: 1rem;
+	font-weight: 700;
+	margin-top: 5px;
+	margin-bottom: 1px;
+	font-family: "clacon2";
+}
+
+.notifText {
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0;
+	overflow: scroll;
+	text-align: start;
+	line-height: 1.1;
+	line-break: anywhere;
+	font-family: "clacon2";
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+
+/* .notifText {
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+	height: calc(100% -50px);
+	text-align: start;
+	text-overflow: ellipsis;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	white-space: normal;
+} */
+
+/* .notifText {
+	color: #fff;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 0;
+	text-align: start;
+	overflow: hidden;
+	position: relative;
+	height: 20px;
+}
+
+.notifText:after {
+	content: "...";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: #0c005b97;
+	padding-left: 5px;
+} */

@@ -1,0 +1,74 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	gap: 0.5rem;
+}
+
+.imgtxtContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.img {
+	width: 35px;
+}
+
+.text {
+	font-size: 1.1rem;
+	text-align: left;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+.btnContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding-bottom: 10px;
+}
+
+.btnYes {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.8rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.15s ease-in;
+	cursor: pointer;
+}
+.btnYes:hover {
+	/* background-color: #4CB8E6; */
+	box-shadow: 0px 5px 20px #000000;
+	background-color: #f21fc4;
+	top: -200px;
+}
+
+.btnNo {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.8rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	transition: background-color 0.1s ease-in;
+	cursor: pointer;
+}
+.btnNo:hover {
+	background-color: #00ff9dff;
+	box-shadow: 0px 0px 5px #00ff9dff;
+
+	/* box-shadow: 4px 6px 0px #f21fc4; */
+}

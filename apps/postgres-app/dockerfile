@@ -1,0 +1,10 @@
+FROM postgres:13.4-alpine
+
+COPY ./apps/postgres-app/init.sh /docker-entrypoint-initdb.d/init.sh
+
+RUN chmod 777 /docker-entrypoint-initdb.d/init.sh
+RUN chown postgres:postgres /docker-entrypoint-initdb.d/init.sh
+
+EXPOSE 5432
+
+CMD ["postgres", "-c", "log_statement=all"]

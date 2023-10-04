@@ -1,0 +1,217 @@
+.body {
+	background-color: #1e152c;
+}
+.qrContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.qrcode {
+	max-height: 400px;
+	max-width: 400px;
+	height: 60%;
+	width: 100%;
+	object-fit: contain;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.qrContainer p {
+	font-size: 1.2rem;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	color: #00ffe1;
+}
+
+.qrContainer button {
+	background-color: #00ffe1;
+	/* border: 2px solid #00FFE1; */
+	border: 0;
+	color: #1e152c;
+	padding: 5px;
+	margin: 5px;
+	font-size: 1.5rem;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+.qrContainer button:hover {
+	box-shadow: 4px 6px 0px #f21fc4;
+}
+
+.enable2FaContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.enable2FaImg {
+	max-height: 400px;
+	max-width: 400px;
+	height: 60%;
+	width: 100%;
+	object-fit: contain;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.enable2FaButton {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.8rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+.enable2FaButton:hover {
+	/* background-color: #4CB8E6; */
+	box-shadow: 4px 6px 0px #f21fc4;
+}
+
+.text {
+	font-size: 1.4rem;
+
+	color: #00ffe1;
+}
+.verifContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.inputVerif {
+	background-color: #1e152c;
+	border: 2px solid #00ffe1;
+	color: #00ffe1;
+	width: 80%;
+	max-width: 250px;
+	padding: 5px;
+	margin: 5px;
+	font-size: 1.6rem;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+	text-align: center;
+}
+
+.inputVerif:focus {
+	outline: none;
+	border: 2px solid #44ffe9;
+	box-shadow: 0 0 5px #00ffe1;
+}
+
+.buttonVerif {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.3rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+
+.buttonVerif:hover {
+	box-shadow: 4px 6px 0px #f21fc4;
+}
+
+.textResult {
+	font-size: 1.7rem;
+	color: #00ffe1;
+}
+
+.inputValid {
+	color: #00ff9d;
+	font-size: 2.5rem;
+}
+.inputError {
+	color: #f21fc4;
+	font-size: 1.5rem;
+	padding: 0;
+	margin: 0.2rem;
+}
+
+.returnButton {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.5rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+
+.returnButton:hover {
+	box-shadow: 4px 6px 0px #f21fc4;
+}
+
+.confirmChoiceContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.confirmYes {
+	background-color: #00ffe1;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.7rem;
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+
+.confirmYes:hover {
+	box-shadow: 4px 6px 0px #f21fc4;
+}
+.confirmNo {
+	background-color: #e81091;
+	border: 0;
+	color: #1e152c;
+	font-size: 1.7rem;
+
+	padding: 5px;
+	margin: 5px;
+	transition: box-shadow 0.1s ease-in;
+	cursor: pointer;
+}
+
+.confirmNo:hover {
+	box-shadow: 4px 6px 0px #00ffe1;
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-20%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.confirmContainer {
+	animation: 0s ease-in-out;
+	animation-fill-mode: forwards;
+	overflow: hidden;
+}
+
+.confirmContainer.slideDown {
+	animation: slideDown 0.2s ease-in-out;
+	animation-fill-mode: forwards;
+}

@@ -1,0 +1,100 @@
+version: "3.9"
+
+services:
+    postgres:
+        image: postgres:latest
+        container_name: postgres
+        build:
+            context: ./
+            dockerfile: apps/postgres-app/dockerfile
+        hostname: postgres
+        ports:
+            - 5432:5432
+        env_file:
+            - ./apps/nest-app/.env
+        healthcheck:
+            test:
+                [
+                    "CMD-SHELL",
+                    "pg_isready -d blackhole2042 -U usernameoftheblackhole2042",
+                ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        # volumes:
+        #   - ./apps/postgres-app/init.sh:/docker-entrypoint-initdb.d/init.sh
+        networks:
+            - db_net
+            - co_net
+        restart: unless-stopped
+
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: pgadmin
+        depends_on:
+            postgres:
+                condition: service_healthy
+        links:
+            - postgres
+        ports:
+            - "5555:80"
+            # - "5555:443"
+        env_file:
+            - ./apps/nest-app/.env
+        volumes:
+            - pgadmin-data:/var/lib/pgadmin
+        networks:
+            - db_net
+        restart: unless-stopped
+
+    nest-app:
+        container_name: nestjs_container
+        build:
+            context: ./
+            dockerfile: apps/nest-app/dockerfile
+        restart: always
+        env_file:
+            - ./apps/nest-app/.env
+        ports:
+            - "3001:443"
+        depends_on:
+            postgres:
+                condition: service_healthy
+        volumes:
+            - ./apps/nest-app:/app/apps/nest-app
+            # - /app/apps/nest-app/node_modules
+        networks:
+            - front_net
+            - co_net
+
+    react-app:
+        container_name: react-container
+        build:
+            context: ./
+            dockerfile: apps/react-app/dockerfile
+        restart: always
+        env_file:
+            - ./apps/react-app/.env
+        ports:
+            # - "3000:80"
+            - "3000:443"
+        volumes:
+            - ./apps/react-app:/app
+            # - /app/node_modules/
+        depends_on:
+            - nest-app
+        networks:
+            - db_net
+            - front_net
+
+volumes:
+    postgres-data:
+    pgadmin-data:
+
+networks:
+    front_net:
+        driver: bridge
+    co_net:
+        driver: bridge
+    db_net:
+        driver: bridge
